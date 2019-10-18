@@ -3,6 +3,7 @@
 // mismo directorio que el archivo main
 import { Telefono } from "./Telefono"
 import { Mail } from "./Mail"
+import { Direccion} from "./Direccion"
 
 // se crea el objeto nuevo y se le da el nombre de telefonoVero
 var telefonoVero = new Telefono("movil", 650576535);
@@ -13,11 +14,12 @@ var mailVero = new Mail("profesional", "ghd@yahoo.com");
 console.log("El numero de telefono es " + telefonoVero.getNumero);
 console.log("El tipo de telefono es " + telefonoVero.getTipo);
 
-telefonoVero.setNumero = 680568746;
+telefonoVero.setNumero= 680568746;
 
-console.log("El nuevo numero de telefono es " + telefonoVero.getNumero);
+console.log("El numero de telefono es " + telefonoVero.getNumero);
 
 
 console.log("La dirección de mail es " + mailVero.getDireccion);
 console.log("El tipo de mail es " + mailVero.getTipo);
 
+var telefonoVero = new Direccion();
