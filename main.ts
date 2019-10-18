@@ -13,7 +13,9 @@ var mailVero = new Mail("profesional", "ghd@yahoo.com");
 console.log("El numero de telefono es " + telefonoVero.getNumero);
 console.log("El tipo de telefono es " + telefonoVero.getTipo);
 
-telefonoVero.setNumero(680568746);
+telefonoVero.setNumero = 680568746;
+
+console.log("El nuevo numero de telefono es " + telefonoVero.getNumero);
 
 
 console.log("La dirección de mail es " + mailVero.getDireccion);
