@@ -61,7 +61,7 @@ export class Direccion {
     get getProvincia(): (string){
         return this.provinciaDireccion;
     }
-    set setProvincia(value= string) {
+    set setProvincia(value: string) {
         if (value == undefined) throw "Introduzca la provincia";
         this.provinciaDireccion = value;
     }
