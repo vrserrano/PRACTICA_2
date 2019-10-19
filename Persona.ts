@@ -6,7 +6,7 @@ export class Persona {
     nombrePersona: string;
     apellidosPersona: string;
     edadPersona: number;
-    dniPersona: number;
+    dniPersona: string;
     cumpleañosPersona:Date;
     colorFavoritoPersona: string;
     sexoPersona: string;
@@ -15,7 +15,7 @@ export class Persona {
     telefonosPersona: Telefono;
     notasPersona: string;
         
-    constructor(nombrePersona: string, apellidosPersona: string, edadPersona: number, dniPersona: number, cumpleañosPersona: Date,  colorFavoritoPersona: string,  sexoPersona: string, direccionesPersona: Direccion, mailsPersona: Mail, telefonosPersona: Telefono, notasPersona: string,) {
+    constructor(nombrePersona: string, apellidosPersona: string, edadPersona: number, dniPersona: string, cumpleañosPersona: Date,  colorFavoritoPersona: string,  sexoPersona: string, direccionesPersona: Direccion, mailsPersona: Mail, telefonosPersona: Telefono, notasPersona: string,) {
         this.nombrePersona = nombrePersona;
         this.apellidosPersona = apellidosPersona;
         this.edadPersona = edadPersona;
@@ -49,10 +49,10 @@ export class Persona {
         if (value == undefined) throw "Introduzca la edad";
         this.edadPersona = value;
     }
-    get getDni(): (number) {
+    get getDni(): (string) {
         return this.dniPersona;
     }
-    set setDni(value: number) {
+    set setDni(value: string) {
         if (value == undefined) throw "Introduzca el DNI";
         this.dniPersona = value;
     }
