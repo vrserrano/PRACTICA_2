@@ -35,7 +35,7 @@ var arrayPersona = [personaPedro, personaMaria, personaFrancisco]
 for (let elementoPersona of arrayPersona) {
     console.log(elementoPersona.imprimirPersona);
 }
-
+//Compara DNI y modifica Dirección, Mail y Teléfono.
 for (let elementoPersona of arrayPersona) {
     if (elementoPersona.getDni === "23054679P") {
         var nuevaDireccion = new Direccion("Pablo Picasso", 10, 3, "D", 28030, "Madrid", "Madrid");
@@ -45,19 +45,15 @@ for (let elementoPersona of arrayPersona) {
         elementoPersona.setDirecciones = nuevaDireccion;
         elementoPersona.setMails = nuevoMail;
         elementoPersona.setTelefonos = nuevoTelefono;
-     
-        console.log ("estoy aqui");
-        
-    }
-    else {
-        console.log("El DNI introducido no se encuentra en nuestra base, pruebe de nuevo.")
 
     }
+}
+    console.log("Hola");
+    
+for (let elementoPersona of arrayPersona) {
+    console.log(elementoPersona.imprimirPersona);
+}
 
-    for (let elementoPersona of arrayPersona) {
-        console.log(elementoPersona.imprimirPersona);
-    }
-   }
 
 
 
