@@ -6,42 +6,58 @@ import { Mail } from "./Mail"
 import { Direccion } from "./Direccion"
 import { Persona } from "./Persona"
 
-// se crea el objeto nuevo y se le da el nombre de telefonoVero
+//Se crea cada una de las variables con los objetos.
 
-var cumpleañosPedro = new Date (1976,6,13);
-var direccionPedro = new Direccion ("La Cruz Antigua", 3, 3, "B", 28350, "Ciempozuelos", "Madrid");
-var mailPedro = new Mail ("personal", "pedro1968@gmail.com");
-var telefonoPedro = new Telefono ("personal", 627724378);
+var cumpleañosPedro = new Date(1976, 6, 13);
+var direccionPedro = new Direccion("La Cruz Antigua", 3, 3, "B", 28350, "Ciempozuelos", "Madrid");
+var mailPedro = new Mail("personal", "pedro1968@gmail.com");
+var telefonoPedro = new Telefono("personal", 627724378);
 
-var cumpleañosMaria = new Date (1986,2,26);
-var direccionMaria = new Direccion ("Lago Blanco", 7, 2, "C", 28980, "Parla", "Madrid");
-var mailMaria = new Mail ("profesional", "msanchez@todorizos.es");
-var telefonoMaria = new Telefono ("profesional", 913657689);
+var cumpleañosMaria = new Date(1986, 2, 26);
+var direccionMaria = new Direccion("Lago Blanco", 7, 2, "C", 28980, "Parla", "Madrid");
+var mailMaria = new Mail("profesional", "msanchez@todorizos.es");
+var telefonoMaria = new Telefono("profesional", 913657689);
 
-var cumpleañosFrancisco =  new Date (1966,3,15); 
-var direccionFrancisco = new Direccion ("Ampurias", 16, 3, "A", 30310, "Cartagena", "Murcia");
-var mailFrancisco = new Mail ("personal", "pacoelrubio@gmail.com");
-var telefonoFrancisco = new Telefono ("personal", 868073244);
-
-
-var personaPedro = new Persona ("Pedro", "García", 43, "23054679P", cumpleañosPedro, "marrón", "hombre", direccionPedro, mailPedro, telefonoPedro, "casado");
-var personaMaria = new Persona ("María", "Sanchez Marín", 33, "53476879L", cumpleañosMaria, "amarillo", "mujer", direccionMaria, mailMaria, telefonoMaria, "soltera");
-var personaFrancisco = new Persona ("Francisco", "Jimenez Forte", 53, "03862342R", cumpleañosFrancisco, "azul", "hombre", direccionFrancisco, mailFrancisco, telefonoFrancisco, "casado");
+var cumpleañosFrancisco = new Date(1966, 3, 15);
+var direccionFrancisco = new Direccion("Ampurias", 16, 3, "A", 30310, "Cartagena", "Murcia");
+var mailFrancisco = new Mail("personal", "pacoelrubio@gmail.com");
+var telefonoFrancisco = new Telefono("personal", 868073244);
 
 
-var arrayPersona = [ personaPedro, personaMaria, personaFrancisco ]
+var personaPedro = new Persona("Pedro", "García", 43, "23054679P", cumpleañosPedro, "marrón", "hombre", direccionPedro, mailPedro, telefonoPedro, "casado");
+var personaMaria = new Persona("María", "Sanchez Marín", 33, "53476879L", cumpleañosMaria, "amarillo", "mujer", direccionMaria, mailMaria, telefonoMaria, "soltera");
+var personaFrancisco = new Persona("Francisco", "Jimenez Forte", 53, "03862342R", cumpleañosFrancisco, "azul", "hombre", direccionFrancisco, mailFrancisco, telefonoFrancisco, "casado");
 
-    
-// se muestra por pantalla los valores del objeto
-console.log("El nombre es " + .getCumpleaños);
-console.log("La dirección es " + .getDirecciones.getCalle);
+//Se crea el array
+var arrayPersona = [personaPedro, personaMaria, personaFrancisco]
 
+// se crea una variable nueva que pasara por cada uno de los elementos del array.
+for (let elementoPersona of arrayPersona) {
+    console.log(elementoPersona.imprimirPersona);
+}
 
+for (let elementoPersona of arrayPersona) {
+    if (elementoPersona.getDni === "23054679P") {
+        var nuevaDireccion = new Direccion("Pablo Picasso", 10, 3, "D", 28030, "Madrid", "Madrid");
+        var nuevoMail = new Mail("profesional", "pccomputer@outlook.es");
+        var nuevoTelefono = new Telefono("personal", 916809675);
 
+        elementoPersona.setDirecciones = nuevaDireccion;
+        elementoPersona.setMails = nuevoMail;
+        elementoPersona.setTelefonos = nuevoTelefono;
+     
+        console.log ("estoy aqui");
+        
+    }
+    else {
+        console.log("El DNI introducido no se encuentra en nuestra base, pruebe de nuevo.")
 
+    }
 
-
-
+    for (let elementoPersona of arrayPersona) {
+        console.log(elementoPersona.imprimirPersona);
+    }
+   }
 
 
 

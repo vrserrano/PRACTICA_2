@@ -14,8 +14,9 @@ export class Persona {
     mailsPersona: Mail;
     telefonosPersona: Telefono;
     notasPersona: string;
-        
-    constructor(nombrePersona: string, apellidosPersona: string, edadPersona: number, dniPersona: string, cumpleañosPersona: Date,  colorFavoritoPersona: string,  sexoPersona: string, direccionesPersona: Direccion, mailsPersona: Mail, telefonosPersona: Telefono, notasPersona: string,) {
+
+
+    constructor(nombrePersona: string, apellidosPersona: string, edadPersona: number, dniPersona: string, cumpleañosPersona: Date,  colorFavoritoPersona: string,  sexoPersona: string, direccionesPersona: Direccion, mailsPersona: Mail, telefonosPersona: Telefono, notasPersona: string) {
         this.nombrePersona = nombrePersona;
         this.apellidosPersona = apellidosPersona;
         this.edadPersona = edadPersona;
@@ -56,8 +57,12 @@ export class Persona {
         if (value == undefined) throw "Introduzca el DNI";
         this.dniPersona = value;
     }
-    get getCumpleaños(): (Date){
-        return this.cumpleañosPersona;
+    get getCumpleaños(): (string){
+        var mes = this.cumpleañosPersona.getMonth();  
+        var diaMes = this.cumpleañosPersona.getDate();   
+        var año = this.cumpleañosPersona.getFullYear();
+        
+        return "" + diaMes + "-" + mes + "-" + año;
     }
     set setCumpleaños(value: Date) {
         if (value == undefined) throw "Introduzca su fecha de cumpleaños";
@@ -99,7 +104,6 @@ export class Persona {
         this.telefonosPersona = value;
     }
     
-    
     get getNotas(): (string) {
         return this.notasPersona;
     }
@@ -107,5 +111,27 @@ export class Persona {
     set setNotas(value: string) {
         if (value == undefined) throw "Introduzca las notas";
         this.notasPersona = value;
+    }
+
+    get imprimirPersona(): (string) {
+        return "El nombre es: " + this.nombrePersona + "\n" +
+        "Los apellidos son: " + this.apellidosPersona + "\n" + 
+        "La edad es: " + this.edadPersona + "\n" + 
+        "El DNI es: " + this.dniPersona + "\n" +
+        "La fecha de cumpleaños es: " + this.getCumpleaños + "\n" +
+        "El color favorito es: " + this.colorFavoritoPersona + "\n" +
+        "El sexo es: " + this.sexoPersona + "\n" +
+        "La dirección es: " + this.getDirecciones.getCalle + "\n" +
+        "Número: " + this.getDirecciones.getNumero + "\n" +
+        "Piso: " + this.getDirecciones.getPiso + "\n" +
+        "Letra: " + this.getDirecciones.getLetra + "\n" +
+        "Código Postal: " + this.getDirecciones.getCodigoPostal + "\n" +
+        "Población: " + this.getDirecciones.getPoblacion + "\n" +
+        "Provincia: " + this.getDirecciones.getProvincia + "\n" +
+        "El mail es: " + this.getMails.getTipo + "\n" +
+        "La dirección mail es: " + this.getMails.getDireccion + "\n" + 
+        "El teléfono es: " + this.getTelefonos.getTipo + "\n" +
+        "El número de teléfono es: " + this.getTelefonos.getNumero + "\n" +
+        "Nota: " + this.notasPersona + "\n";
     }
 }
