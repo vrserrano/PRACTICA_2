@@ -48,8 +48,7 @@ for (let elementoPersona of arrayPersona) {
 
     }
 }
-    console.log("Hola");
-    
+
 for (let elementoPersona of arrayPersona) {
     console.log(elementoPersona.imprimirPersona);
 }

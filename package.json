@@ -5,7 +5,7 @@
   "scripts": {
     "start": "npm-run-all buildTsc launchMain",
     "buildTsc": "tsc",
-    "launchMain": "node main.js"
+    "launchMain": "node out/main.js"
   },
   "repository": {
     "type": "git",
